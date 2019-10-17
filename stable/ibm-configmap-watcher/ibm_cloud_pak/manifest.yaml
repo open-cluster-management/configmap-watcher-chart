@@ -1,17 +1,17 @@
 charts:
-  - archive: file:ibm-configmap-watcher-1.0.0.tgz
+  - archive: file:ibm-configmap-watcher-3.2.2.tgz
     repository-keys:
     - image.repository
 images:
-  - image: "icp-configmap-watcher:1.0.0"
+  - image: "icp-configmap-watcher:3.2.2"
     references:
     - pull-authorization:
         password:
           env: ARTIFACTORY_PASSWORD
         username:
           env: ARTIFACTORY_USERNAME
-      pull-repository: icp-configmap-watcher:1.0.0-amd64
-      repository: icp-configmap-watcher-amd64:1.0.0
+      pull-repository: icp-configmap-watcher:3.2.2-amd64
+      repository: icp-configmap-watcher-amd64:3.2.2
       platform:
         os: linux
         architecture: amd64
@@ -20,8 +20,8 @@ images:
           env: ARTIFACTORY_PASSWORD
         username:
           env: ARTIFACTORY_USERNAME
-      pull-repository: icp-configmap-watcher:1.0.0-s390x
-      repository: icp-configmap-watcher-s390x:1.0.0
+      pull-repository: icp-configmap-watcher:3.2.2-s390x
+      repository: icp-configmap-watcher-s390x:3.2.2
       platform:
         os: linux
         architecture: s390x
@@ -30,8 +30,8 @@ images:
           env: ARTIFACTORY_PASSWORD
         username:
           env: ARTIFACTORY_USERNAME
-      pull-repository: icp-configmap-watcher:1.0.0-ppc64le
-      repository: icp-configmap-watcher-ppc64le:1.0.0
+      pull-repository: icp-configmap-watcher:3.2.2-ppc64le
+      repository: icp-configmap-watcher-ppc64le:3.2.2
       platform:
         os: linux
         architecture: ppc64le
