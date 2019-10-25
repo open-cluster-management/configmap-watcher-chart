@@ -1,7 +1,7 @@
 name: ibm-configmap-watcher
 apiVersion: v1
-version: "3.2.2"
-appVersion: "3.2.2"
+version: 3.4.0
+appVersion: 3.3.0
 tillerVersion: ">=2.7.0"
 kubeVersion: ">=1.11.0"
 description: "A helm chart for deploying the config map watcher component."
