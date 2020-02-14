@@ -1,7 +1,9 @@
 replicaCount: 1
 
+imageTagPostfix: ""
 image: 
-  repository: ibmcom/icp-configmap-watcher
+  name: icp-configmap-watcher
+  repository: ibmcom
   tag: 3.3.1
   pullPolicy: IfNotPresent
 

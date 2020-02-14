@@ -38,7 +38,7 @@ spec:
         runAsUser: {{ .Values.securityContext.pod.runAsUser }}
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          image: "{{ .Values.image.repository }}/{{ .Values.image.name }}:{{ .Values.image.tag }}{{ .Values.imageTagPostfix }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           args:
           - --v={{ .Values.args.verbosity }}
