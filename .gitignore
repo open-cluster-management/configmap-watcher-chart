@@ -1,4 +1,3 @@
 .build-harness-bootstrap
 build-harness-extensions/
 build-harness/
-configmap-watcher*
