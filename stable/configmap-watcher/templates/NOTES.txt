@@ -1,4 +1,4 @@
-IBM Configmap Watcher has been deployed successfully!
+Configmap Watcher has been deployed successfully!
 
 In order to watch configmaps and restart deployments/daemonsets/statefulsets based on the changes to those configmaps, simply include the label `target: configmap-watcher` and
 the annotation `watcher.ibm.com/configmap-resource=<configmap to watch>` into your spec.
