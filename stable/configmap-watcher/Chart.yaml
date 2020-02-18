@@ -1,4 +1,4 @@
-name: ibm-configmap-watcher
+name: configmap-watcher
 apiVersion: v1
 version: 3.4.1
 appVersion: 3.3.1
