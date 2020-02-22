@@ -3,7 +3,7 @@ replicaCount: 1
 imageTagPostfix: ""
 image: 
   name: configmap-watcher
-  repository: ibmcom
+  repository: quay.io/open-cluster-management
   tag: 3.3.1
   pullPolicy: IfNotPresent
 
@@ -28,8 +28,6 @@ securityContext:
     runAsUser: 10000
     runAsNonRoot: true
 
-nodeSelector:
-  master: "true"
 affinity: {}
 
 tolerations:
