@@ -1,3 +1,13 @@
+global:
+  __metadata:
+    label: "Global Chart Settings"
+    description: "Global values for configmap-watcher chart"
+  pullSecret:
+    __metadata:
+      label: "Image Pull Secret"
+      description: "A secret required to pull configmap-watcher images."
+      type: "string"
+      required: false
 replicaCount:
   __metadata:
     label: "Replicas"
@@ -118,20 +128,6 @@ securityContext:
         label: "Privileged"
         description: "If true, allows container to run with privileged access."
         type: "boolean"
-nodeSelector:
-  __metadata:
-    name: "nodeSelector"
-    label: "Node selector"
-    description: "Node labels for pod assignment"
-    type: "string"
-    immutable: false
-    required: false
-  master:
-    __metadata:
-      label: "Master"
-      description: "Runs on master node if true, otherwise runs on other nodes if false."
-      type: "string"
-      required: true
 affinity:
   __metadata:
     label: "Affinity"

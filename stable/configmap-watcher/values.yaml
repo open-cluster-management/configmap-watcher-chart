@@ -1,3 +1,6 @@
+global:
+  pullSecret: ""
+
 replicaCount: 1
 
 imageTagPostfix: ""
