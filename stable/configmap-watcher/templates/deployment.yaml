@@ -35,7 +35,9 @@ spec:
       serviceAccountName: {{ .Values.serviceAccount.name }}
       securityContext:
         runAsNonRoot: {{ .Values.securityContext.pod.runAsNonRoot }}
+        {{- if .Values.securityContext.pod.runAsUser }}
         runAsUser: {{ .Values.securityContext.pod.runAsUser }}
+        {{- end }}
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}/{{ .Values.image.name }}:{{ .Values.image.tag }}{{ .Values.imageTagPostfix }}"
@@ -74,7 +76,9 @@ spec:
             capabilities:
               drop:
               - ALL
+            {{- if .Values.securityContext.container.runAsUser }}
             runAsUser: {{ .Values.securityContext.container.runAsUser }}
+            {{- end }}
             runAsNonRoot: {{ .Values.securityContext.container.runAsNonRoot }}
           resources:
             limits:

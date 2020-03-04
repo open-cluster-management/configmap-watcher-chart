@@ -23,12 +23,10 @@ serviceAccount:
 securityContext:
   pod:
     runAsNonRoot: true
-    runAsUser: 10000
   container:
     privileged: false
     allowPrivilegeEscalation: false
     readOnlyRootFilesystem: true
-    runAsUser: 10000
     runAsNonRoot: true
 
 affinity: {}
