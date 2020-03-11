@@ -26,8 +26,6 @@ spec:
         app.kubernetes.io/managed-by: {{ .Release.Service }}
         helm.sh/chart: {{ include "configmap-watcher.chart" . }}
         release: {{ .Release.Name }}
-      annotations:
-        seccomp.security.alpha.kubernetes.io/pod: docker/default
     spec:
       hostNetwork: false
       hostPID: false
