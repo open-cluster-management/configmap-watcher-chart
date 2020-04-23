@@ -27,7 +27,7 @@ spec:
     runAsNonRoot: {{ .Values.securityContext.pod.runAsNonRoot }}
   containers:
   - name: {{ .Release.Name }}-test-cmw-health
-    image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+    image: {{ .Values.global.imageOverrides.configmap_watcher }}
     command: ["sh", "-c", "echo configmap-watcher-tests"]
     resources:
       requests:
