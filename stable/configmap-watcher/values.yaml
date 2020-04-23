@@ -2,7 +2,7 @@ global:
   pullSecret: ""
   imageOverrides:
     configmap_watcher: ""
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 replicaCount: 1
 
