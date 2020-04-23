@@ -40,19 +40,6 @@ image:
       description: "The tag identifying which configmap watcher image to deploy."
       type: "string"
       required: true
-  pullPolicy:
-    __metadata:
-      label: "Pull Policy"
-      description: "The policy used by Kubernetes to pull images."
-      type: "string"
-      required: true
-      options:
-      - label: "Never"
-        value: "Never"
-      - label: "IfNotPresent"
-        value: "IfNotPresent"
-      - label: "Always"
-        value: "Always"
 args:
   __metadata:
     label: "Arguments"

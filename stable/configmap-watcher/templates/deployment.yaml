@@ -39,7 +39,7 @@ spec:
       containers:
         - name: {{ .Chart.Name }}
           image: {{ .Values.global.imageOverrides.configmap_watcher }}
-          imagePullPolicy: {{ .Values.global.image.pullPolicy }}
+          imagePullPolicy: {{ .Values.global.pullPolicy }}
           args:
           - --v={{ .Values.args.verbosity }}
           {{- if .Values.args.gatherFreq }}
