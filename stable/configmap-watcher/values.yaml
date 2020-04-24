@@ -1,17 +1,10 @@
 global:
   pullSecret: ""
+  imageOverrides:
+    configmap_watcher: ""
+  pullPolicy: Always
 
 replicaCount: 1
-
-imageTagPostfix: ""
-image: 
-  name: configmap-watcher
-  repository: quay.io/open-cluster-management
-  tag: 3.3.1
-  pullPolicy: IfNotPresent
-
-imageShaDigests:
-  configmap_watcher: ""
 
 args:
   verbosity: 0

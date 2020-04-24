@@ -2,6 +2,16 @@ global:
   __metadata:
     label: "Global Chart Settings"
     description: "Global values for configmap-watcher chart"
+  imageOverrides:
+    _metadata:
+      name: "imageOverrides"
+      label: "CI/CD Image Overrides"
+      description: "Special Value for CI/CD Build Requirements"
+      configmap_watcher:
+        _metadata:
+          name: "configmap_watcher"
+          description: "key for configmap_watcher image from override"
+          hidden: true
   pullSecret:
     __metadata:
       label: "Image Pull Secret"
@@ -30,19 +40,6 @@ image:
       description: "The tag identifying which configmap watcher image to deploy."
       type: "string"
       required: true
-  pullPolicy:
-    __metadata:
-      label: "Pull Policy"
-      description: "The policy used by Kubernetes to pull images."
-      type: "string"
-      required: true
-      options:
-      - label: "Never"
-        value: "Never"
-      - label: "IfNotPresent"
-        value: "IfNotPresent"
-      - label: "Always"
-        value: "Always"
 args:
   __metadata:
     label: "Arguments"

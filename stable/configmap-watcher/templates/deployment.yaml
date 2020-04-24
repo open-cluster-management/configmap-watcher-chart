@@ -38,12 +38,8 @@ spec:
         {{- end }}
       containers:
         - name: {{ .Chart.Name }}
-          {{- if .Values.imageShaDigests.configmap_watcher }}
-          image: "{{ .Values.image.repository }}/{{ .Values.image.name }}@{{ .Values.imageShaDigests.configmap_watcher }}"
-          {{- else }}
-          image: "{{ .Values.image.repository }}/{{ .Values.image.name }}:{{ .Values.image.tag }}{{ .Values.imageTagPostfix }}"
-          {{- end }}
-          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          image: {{ .Values.global.imageOverrides.configmap_watcher }}
+          imagePullPolicy: {{ .Values.global.pullPolicy }}
           args:
           - --v={{ .Values.args.verbosity }}
           {{- if .Values.args.gatherFreq }}
