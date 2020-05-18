@@ -1,4 +1,4 @@
-# What's new in 0.0.1
+# What's new in 3.6.0
 * Watches config maps specified by deployments/daemonsets/statefulsets for changes.
 
 # Prerequisites
@@ -11,4 +11,4 @@
 # Version History
 | Chart   | Date               | Details                           |
 | ------- | ------------------ | --------------------------------- |
-| 0.0.1   | December 2019      | First full release                |
+| 3.6.0   | June 2020      | First full release                |
