@@ -1,4 +1,4 @@
-# Cloud Private Config Map Watcher
+# Config Map Watcher
 
 ## Introduction
 This chart deploys the Config Map Watcher service restarts pods when the config map it needs to watch changes.
