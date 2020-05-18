@@ -1,22 +1,21 @@
 global:
   pullSecret: ""
+  imageOverrides:
+    configmap_watcher: ""
+  pullPolicy: Always
+
 replicaCount: 1
-imageTagPostfix: ""
-image:
-  name: configmap-watcher
-  repository: quay.io/open-cluster-management
-  tag: 3.6.0
-  pullPolicy: IfNotPresent
-imageShaDigests:
-  configmap_watcher: ""
+
 args:
   verbosity: 0
-  cleanFreq: null
-  gatherFreq: null
-  checkConfigmapFreq: null
+  cleanFreq:
+  gatherFreq:
+  checkConfigmapFreq:
+
 serviceAccount:
   name: default
   create: false
+
 securityContext:
   pod:
     runAsNonRoot: true
@@ -25,13 +24,17 @@ securityContext:
     allowPrivilegeEscalation: false
     readOnlyRootFilesystem: true
     runAsNonRoot: true
+
 affinity: {}
+
 tolerations: {}
+
 resources:
   limits:
-    memory: 300Mi
-    cpu: 200m
+    memory: "300Mi"
+    cpu: "200m"
   requests:
-    memory: 150Mi
-    cpu: 100m
+    memory: "150Mi"
+    cpu: "100m"
+
 imagePullSecrets: []
