@@ -25,16 +25,40 @@ securityContext:
     readOnlyRootFilesystem: true
     runAsNonRoot: true
 
-affinity: {}
+affinity:
+  podAntiAffinity:
+    preferredDuringSchedulingIgnoredDuringExecution:
+    - weight: 70
+      podAffinityTerm:
+        topologyKey: failure-domain.beta.kubernetes.io/zone
+        labelSelector:
+          matchExpressions:
+          - key: app
+            operator: In
+            values:
+            - configmap-watcher
+    - weight: 35
+      podAffinityTerm:
+        topologyKey: kubernetes.io/hostname
+        labelSelector:
+          matchExpressions:
+          - key: app
+            operator: In
+            values:
+            - configmap-watcher
+
 
 tolerations: {}
 
+hubconfig:
+  nodeSelector: null
+
 resources:
   limits:
-    memory: "300Mi"
-    cpu: "200m"
+    memory: "800Mi"
+    cpu: "800m"
   requests:
-    memory: "150Mi"
-    cpu: "100m"
+    memory: "250Mi"
+    cpu: "200m"
 
 imagePullSecrets: []

@@ -36,6 +36,27 @@ spec:
         {{- if .Values.securityContext.pod.runAsUser }}
         runAsUser: {{ .Values.securityContext.pod.runAsUser }}
         {{- end }}
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 70
+            podAffinityTerm:
+              topologyKey: failure-domain.beta.kubernetes.io/zone
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - configmap-watcher
+          - weight: 35
+            podAffinityTerm:
+              topologyKey: kubernetes.io/hostname
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - configmap-watcher
       containers:
         - name: {{ .Chart.Name }}
           image: {{ .Values.global.imageOverrides.configmap_watcher }}
@@ -85,10 +106,6 @@ spec:
             requests:
               memory: {{ .Values.resources.requests.memory }}
               cpu: {{ .Values.resources.requests.cpu }}
-    {{- with .Values.affinity }}
-      affinity:
-{{ toYaml . | indent 8 }}
-    {{- end }}
     {{- with .Values.tolerations }}
       tolerations:
 {{ toYaml . | indent 8 }}
@@ -96,4 +113,8 @@ spec:
       {{- if .Values.global.pullSecret }}
       imagePullSecrets:
       - name: {{ .Values.global.pullSecret }}
+      {{- end }}
+      {{- with .Values.hubconfig.nodeSelector }}
+      nodeSelector:
+      {{ toYaml . | indent 8 }}
       {{- end }}
