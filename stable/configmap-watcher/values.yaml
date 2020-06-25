@@ -4,8 +4,6 @@ global:
     configmap_watcher: ""
   pullPolicy: Always
 
-replicaCount: 1
-
 args:
   verbosity: 0
   cleanFreq:
@@ -52,6 +50,7 @@ tolerations: {}
 
 hubconfig:
   nodeSelector: null
+  replicaCount: 1
 
 resources:
   limits:
