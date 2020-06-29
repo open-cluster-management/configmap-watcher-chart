@@ -1,7 +1,7 @@
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
-  name: {{ .Values.org }}:{{ .Release.Name }}:clusterrolebinding
+  name: {{ .Values.org }}:{{ .Chart.Name }}:clusterrolebinding
   labels:
     app.kubernetes.io/name: {{ include "configmap-watcher.name" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
@@ -11,7 +11,7 @@ metadata:
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
-  name: {{ .Values.org }}:{{ .Release.Name }}:clusterrole
+  name: {{ .Values.org }}:{{ .Chart.Name }}:clusterrole
 subjects:
   - name: {{ .Values.serviceAccount.name }}
     namespace: {{ .Release.Namespace | quote }}
