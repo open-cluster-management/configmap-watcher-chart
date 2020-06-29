@@ -1,3 +1,5 @@
+org: open-cluster-management
+
 global:
   pullSecret: ""
   imageOverrides:
