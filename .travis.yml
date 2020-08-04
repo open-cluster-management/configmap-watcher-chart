@@ -57,4 +57,4 @@ jobs:
       script: 
         - git clone --single-branch --branch dev-auto https://${GITHUB_TOKEN}@github.com/open-cluster-management/multicloudhub-repo.git
         - cd multicloudhub-repo
-        - ./cicd-scripts/chartAutomation.sh cert-manager
+        - ./cicd-scripts/chartAutomation.sh configmap-watcher
