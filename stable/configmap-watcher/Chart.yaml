@@ -1,9 +1,8 @@
 name: configmap-watcher
 apiVersion: v1
-version: 3.6.0
-appVersion: 3.6.0
+version: 3.7.0
+appVersion: 3.7.0
 tillerVersion: ">=2.7.0"
-kubeVersion: ">=1.11.0"
 description: "A helm chart for deploying the config map watcher component."
 keywords:
   - configmap
