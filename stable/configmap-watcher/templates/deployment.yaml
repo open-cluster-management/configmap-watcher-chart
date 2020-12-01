@@ -26,6 +26,7 @@ spec:
         app.kubernetes.io/managed-by: {{ .Release.Service }}
         helm.sh/chart: {{ include "configmap-watcher.chart" . }}
         release: {{ .Release.Name }}
+        ocm-antiaffinity-selector: "configmapwatcher"
     spec:
       hostNetwork: false
       hostPID: false
@@ -44,19 +45,19 @@ spec:
               topologyKey: topology.kubernetes.io/zone
               labelSelector:
                 matchExpressions:
-                - key: app
+                - key: ocm-antiaffinity-selector
                   operator: In
                   values:
-                  - configmap-watcher
+                  - configmapwatcher
           - weight: 35
             podAffinityTerm:
               topologyKey: kubernetes.io/hostname
               labelSelector:
                 matchExpressions:
-                - key: app
+                - key: ocm-antiaffinity-selector
                   operator: In
                   values:
-                  - configmap-watcher
+                  - configmapwatcher
       containers:
         - name: {{ .Chart.Name }}
           image: {{ .Values.global.imageOverrides.configmap_watcher }}
