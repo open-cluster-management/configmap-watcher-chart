@@ -25,7 +25,10 @@ securityContext:
     readOnlyRootFilesystem: true
     runAsNonRoot: true
 
-tolerations: {}
+tolerations:
+- effect: NoSchedule 
+  key: node-role.kubernetes.io/infra 
+  operator: Exists
 
 hubconfig:
   nodeSelector: null
