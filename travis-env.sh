@@ -1,5 +1,5 @@
 # Release Tag and Repository
-if [ "$TRAVIS_BRANCH" = "master" ]; then
+if [ "$TRAVIS_BRANCH" = "main" ]; then
     if ! [ "$TRAVIS_EVENT_TYPE" = "pull_request" ]; then
         ARTIFACTORY_REPO=hyc-cloud-private-integration-helm-local
         export ARTIFACTORY_REPO="$ARTIFACTORY_REPO"
