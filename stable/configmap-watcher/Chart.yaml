@@ -1,7 +1,7 @@
 name: configmap-watcher
 apiVersion: v1
-version: 3.7.0
-appVersion: 3.7.0
+version: 3.8.0
+appVersion: 3.8.0
 tillerVersion: ">=2.7.0"
 description: "A helm chart for deploying the config map watcher component."
 keywords:
@@ -10,8 +10,6 @@ keywords:
   - kubernetes
   - ICP
   - amd64
-  - s390x
-  - ppc64le
   - Tools
   - Development
   - Tech
