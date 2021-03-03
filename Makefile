@@ -1,3 +1,5 @@
+# Copyright Contributors to the Open Cluster Management project
+
 include Configfile
 ###############################################################################
 # Licensed Materials - Property of IBM.
